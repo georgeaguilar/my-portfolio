@@ -23,7 +23,7 @@ const certifications = [
 
 export default function Education() {
   return (
-    <section id="education" className="relative py-28 px-6 overflow-hidden">
+    <section id="education" className="relative py-20 sm:py-28 px-6 overflow-hidden">
       {/* Background blobs */}
       <div className="absolute top-10 left-0 w-96 h-96 rounded-full bg-purple-400/10 dark:bg-purple-600/10 blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 right-0 w-80 h-80 rounded-full bg-sky-400/10 dark:bg-sky-600/10 blur-3xl pointer-events-none" />

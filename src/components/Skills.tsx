@@ -65,7 +65,7 @@ const cardBorderMap: Record<string, string> = {
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative py-28 px-6 overflow-hidden">
+    <section id="skills" className="relative py-20 sm:py-28 px-6 overflow-hidden">
       {/* Background blobs */}
       <div className="absolute -bottom-20 -left-20 w-96 h-96 rounded-full bg-indigo-400/10 dark:bg-indigo-600/10 blur-3xl pointer-events-none" />
       <div className="absolute top-20 right-0 w-80 h-80 rounded-full bg-pink-400/10 dark:bg-pink-600/10 blur-3xl pointer-events-none" />

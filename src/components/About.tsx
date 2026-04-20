@@ -7,7 +7,7 @@ const stats = [
 
 export default function About() {
   return (
-    <section id="about" className="relative py-28 px-6 overflow-hidden">
+    <section id="about" className="relative py-20 sm:py-28 px-6 overflow-hidden">
       {/* Background blob */}
       <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-purple-400/10 dark:bg-purple-600/10 blur-3xl pointer-events-none" />
 
@@ -26,7 +26,7 @@ export default function About() {
           <div className="mt-4 h-1 w-16 rounded-full bg-linear-to-r from-indigo-600 to-purple-600" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Text */}
           <div className="space-y-6 animate-fade-in-left" style={{ animationDelay: "0.2s" }}>
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">

@@ -54,7 +54,7 @@ const colorMap: Record<string, { bg: string; text: string; border: string; hover
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative py-28 px-6 overflow-hidden">
+    <section id="contact" className="relative py-20 sm:py-28 px-6 overflow-hidden">
       {/* Background blobs */}
       <div className="absolute -bottom-20 -right-20 w-96 h-96 rounded-full bg-indigo-400/15 dark:bg-indigo-600/10 blur-3xl pointer-events-none" />
       <div className="absolute top-10 -left-20 w-80 h-80 rounded-full bg-purple-400/10 dark:bg-purple-600/10 blur-3xl pointer-events-none" />

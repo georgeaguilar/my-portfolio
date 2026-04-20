@@ -53,7 +53,7 @@ const projects = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="relative py-28 px-6 overflow-hidden">
+    <section id="experience" className="relative py-20 sm:py-28 px-6 overflow-hidden">
       {/* Background blob */}
       <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-indigo-400/10 dark:bg-indigo-600/10 blur-3xl pointer-events-none" />
 
