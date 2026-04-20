@@ -14,11 +14,11 @@ const degrees = [
 ];
 
 const certifications = [
-  { name: "Full-Stack Engineer Career Path", issuer: "Codecademy" },
-  { name: "Learn JavaScript Course", issuer: "Codecademy" },
-  { name: "Learn HTML Course", issuer: "Codecademy" },
-  { name: "Learn Responsive Design Course", issuer: "Codecademy" },
-  { name: "C#: Start Your Journey in the Language", issuer: "Udemy" },
+  { name: "Full-Stack Engineer Career Path", issuer: "Codecademy", url: "https://www.codecademy.com/profiles/jorgeAguilar9508987673/certificates/5f7e644d833c070013ef47c4" },
+  { name: "Learn JavaScript Course", issuer: "Codecademy", url: "https://www.codecademy.com/profiles/jorgeAguilar9508987673/certificates/3a62023b0054dc793edc0adecd715fd7" },
+  { name: "Learn HTML Course", issuer: "Codecademy", url: "https://www.codecademy.com/profiles/jorgeAguilar9508987673/certificates/9eb0741e5ebef1f9f58a53bfac67d3a7" },
+  { name: "Learn Responsive Design Course", issuer: "Codecademy", url: "https://www.codecademy.com/profiles/jorgeAguilar9508987673/certificates/705dcb15de0da4dd9d9fc4f3274b430e" },
+  { name: "C#: Start Your Journey in the Language", issuer: "Udemy", url: "https://www.udemy.com/certificate/UC-6b50c874-7191-4181-9ddd-29214c5798ff/" },
 ];
 
 export default function Education() {
@@ -87,8 +87,11 @@ export default function Education() {
             </h3>
             <div className="space-y-3">
               {certifications.map((cert, i) => (
-                <div
+                <a
                   key={cert.name}
+                  href={cert.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="animate-fade-in-up group flex items-center gap-4 p-4 rounded-xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-md shadow-black/8 dark:shadow-none hover:border-purple-200 dark:hover:border-purple-800 transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-purple-500/10"
                   style={{ animationDelay: `${0.3 + i * 0.07}s` }}
                 >
@@ -97,13 +100,16 @@ export default function Education() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                     </svg>
                   </div>
-                  <div className="min-w-0">
-                    <p className="text-sm font-medium text-gray-900 dark:text-white truncate">
+                  <div className="min-w-0 flex-1">
+                    <p className="text-sm font-medium text-gray-900 dark:text-white truncate group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                       {cert.name}
                     </p>
                     <p className="text-xs text-gray-500 dark:text-gray-400">{cert.issuer}</p>
                   </div>
-                </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="shrink-0 w-4 h-4 text-gray-400 dark:text-gray-600 group-hover:text-purple-500 dark:group-hover:text-purple-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
               ))}
             </div>
           </div>
