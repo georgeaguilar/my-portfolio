@@ -2,6 +2,8 @@
 
 Personal developer portfolio built with Next.js, showcasing my projects, skills, and experience.
 
+**Live:** [my-portfolio-brown-ten-93.vercel.app](https://my-portfolio-brown-ten-93.vercel.app)
+
 ## Tech Stack
 
 - **Framework:** Next.js 16
