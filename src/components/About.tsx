@@ -9,7 +9,7 @@ export default function About() {
   return (
     <section id="about" className="relative py-28 px-6 overflow-hidden">
       {/* Background blob */}
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-purple-400/10 dark:bg-purple-600/10 blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-purple-400/10 dark:bg-purple-600/10 blur-3xl pointer-events-none" />
 
       <div className="max-w-6xl mx-auto">
         {/* Section title */}
@@ -19,11 +19,11 @@ export default function About() {
           </p>
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white">
             About{" "}
-            <span className="bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 bg-clip-text text-transparent">
               Me
             </span>
           </h2>
-          <div className="mt-4 h-1 w-16 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600" />
+          <div className="mt-4 h-1 w-16 rounded-full bg-linear-to-r from-indigo-600 to-purple-600" />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -45,9 +45,13 @@ export default function About() {
               <span className="text-indigo-600 dark:text-indigo-400 font-medium">DigitalOcean</span>.
             </p>
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              My background in <span className="text-gray-900 dark:text-white font-semibold">Mechatronics Engineering</span> and
-              a <span className="text-gray-900 dark:text-white font-semibold">Master&apos;s in Finance</span> gives me
-              a unique perspective — I don&apos;t just write code, I understand the business impact behind it.
+              Beyond development, I&apos;ve contributed to{" "}
+              <span className="text-gray-900 dark:text-white font-semibold">QA processes</span> — writing
+              end-to-end tests and helping validate APIs using tools like{" "}
+              <span className="text-indigo-600 dark:text-indigo-400 font-medium">Cypress</span>,{" "}
+              <span className="text-indigo-600 dark:text-indigo-400 font-medium">Playwright</span>, and{" "}
+              <span className="text-indigo-600 dark:text-indigo-400 font-medium">Jest</span>. I care about
+              shipping software that actually works, not just software that compiles.
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">
@@ -85,8 +89,8 @@ export default function About() {
                 className="relative group p-6 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 hover:border-indigo-300 dark:hover:border-indigo-700 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500/10"
                 style={{ animationDelay: `${0.3 + i * 0.1}s` }}
               >
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-indigo-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                <p className="text-4xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 bg-clip-text text-transparent mb-1">
+                <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-indigo-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <p className="text-4xl font-bold bg-linear-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 bg-clip-text text-transparent mb-1">
                   {stat.value}
                 </p>
                 <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">{stat.label}</p>

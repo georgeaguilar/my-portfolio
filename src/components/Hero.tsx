@@ -46,7 +46,7 @@ export default function Hero() {
             className="animate-fade-in-up text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-4"
             style={{ animationDelay: "0.3s" }}
           >
-            <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-indigo-600 via-purple-600 to-pink-500 dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
               Jorge Aguilar
             </span>
           </h1>
@@ -151,8 +151,8 @@ export default function Hero() {
         >
           <div className="relative animate-float">
             {/* Spinning gradient ring */}
-            <div className="absolute -inset-3 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 animate-spin-slow opacity-70 blur-sm" />
-            <div className="absolute -inset-3 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-40" />
+            <div className="absolute -inset-3 rounded-full bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 animate-spin-slow opacity-70 blur-sm" />
+            <div className="absolute -inset-3 rounded-full bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-40" />
 
             {/* Photo */}
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-white dark:border-gray-900 animate-pulse-glow">
