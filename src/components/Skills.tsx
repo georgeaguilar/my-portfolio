@@ -89,7 +89,7 @@ export default function Skills() {
           {skillCategories.map((category, i) => (
             <div
               key={category.title}
-              className={`animate-fade-in-up group relative p-6 rounded-2xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 ${cardBorderMap[category.color]} transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-black/5 dark:hover:shadow-black/20`}
+              className={`animate-fade-in-up group relative p-6 rounded-2xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-md shadow-black/8 dark:shadow-none ${cardBorderMap[category.color]} transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-black/12 dark:hover:shadow-black/20`}
               style={{ animationDelay: `${0.1 + i * 0.1}s` }}
             >
               <div className="flex items-center gap-3 mb-4">
