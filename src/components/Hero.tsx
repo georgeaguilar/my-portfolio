@@ -1,4 +1,5 @@
 import Image from "next/image";
+import KiParticles from "./KiParticles";
 
 const techBadges = ["React", "Vue", "NestJS", "Golang", "TypeScript", "AWS"];
 
@@ -10,6 +11,9 @@ export default function Hero() {
       <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-indigo-400/20 dark:bg-indigo-600/15 blur-3xl pointer-events-none" />
       <div className="absolute -bottom-40 -right-40 w-[600px] h-[600px] rounded-full bg-purple-400/20 dark:bg-purple-600/15 blur-3xl pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-sky-400/10 dark:bg-sky-600/10 blur-3xl pointer-events-none" />
+
+      {/* Ki energy particles */}
+      <KiParticles />
 
       {/* Dot grid */}
       <div
