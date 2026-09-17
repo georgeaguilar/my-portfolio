@@ -3,7 +3,7 @@ import Reveal from "./Reveal";
 const stats = [
   { value: "4+", label: "Years of experience" },
   { value: "8+", label: "Projects delivered" },
-  { value: "1M+", label: "Users impacted" },
+  { value: "7", label: "Frameworks" },
   { value: "3", label: "Cloud platforms" },
 ];
 
