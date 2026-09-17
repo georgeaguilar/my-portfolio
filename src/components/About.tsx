@@ -1,102 +1,73 @@
+import Reveal from "./Reveal";
+
 const stats = [
-  { value: "4+", label: "Years of Experience" },
-  { value: "8+", label: "Projects Delivered" },
-  { value: "1M+", label: "Users Impacted" },
-  { value: "3", label: "Cloud Platforms" },
+  { value: "4+", label: "Years of experience" },
+  { value: "8+", label: "Projects delivered" },
+  { value: "1M+", label: "Users impacted" },
+  { value: "3", label: "Cloud platforms" },
 ];
 
 export default function About() {
   return (
-    <section id="about" className="relative py-20 sm:py-28 px-6 overflow-hidden">
-      {/* Background blob */}
-      <div className="absolute top-0 right-0 w-100 h-100 rounded-full bg-purple-400/10 dark:bg-purple-600/10 blur-3xl pointer-events-none" />
-
+    <section id="about" className="py-24 sm:py-32 px-6">
       <div className="max-w-6xl mx-auto">
-        {/* Section title */}
-        <div className="mb-16 animate-fade-in-up">
-          <p className="text-sm font-mono text-indigo-600 dark:text-indigo-400 tracking-widest uppercase mb-2">
-            Get to know me
-          </p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white">
-            About{" "}
-            <span className="bg-linear-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 bg-clip-text text-transparent">
-              Me
-            </span>
-          </h2>
-          <div className="mt-4 h-1 w-16 rounded-full bg-linear-to-r from-indigo-600 to-purple-600" />
-        </div>
+        <Reveal className="flex items-baseline gap-4 mb-16">
+          <span className="font-mono text-sm text-[var(--fg-muted)]">01</span>
+          <h2 className="text-title font-bold">About</h2>
+        </Reveal>
+        <div className="h-px bg-[var(--line)] mb-16" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-          {/* Text */}
-          <div className="space-y-6 animate-fade-in-left" style={{ animationDelay: "0.2s" }}>
-            <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              I&apos;m a <span className="text-gray-900 dark:text-white font-semibold">Full Stack Developer</span> with
+        <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-12 lg:gap-16">
+          <Reveal delay={0.1} className="space-y-6 max-w-[65ch]">
+            <p className="text-lg text-[var(--fg-muted)] leading-relaxed">
+              I&apos;m a <span className="text-[var(--fg)] font-semibold">Full Stack Developer</span> with
               4+ years of experience building and scaling web platforms and mobile applications for clients
-              across the <span className="text-gray-900 dark:text-white font-semibold">U.S., Canada, and Honduras</span>.
+              across the U.S., Canada, and Honduras.
             </p>
-            <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              I&apos;ve worked across the full stack — from crafting responsive UIs with{" "}
-              <span className="text-indigo-600 dark:text-indigo-400 font-medium">React</span> and{" "}
-              <span className="text-indigo-600 dark:text-indigo-400 font-medium">Vue</span>, to building robust
-              APIs with <span className="text-indigo-600 dark:text-indigo-400 font-medium">NestJS</span> and{" "}
-              <span className="text-indigo-600 dark:text-indigo-400 font-medium">Golang</span>, deploying on{" "}
-              <span className="text-indigo-600 dark:text-indigo-400 font-medium">AWS</span>,{" "}
-              <span className="text-indigo-600 dark:text-indigo-400 font-medium">Azure</span>, and{" "}
-              <span className="text-indigo-600 dark:text-indigo-400 font-medium">DigitalOcean</span>.
+            <p className="text-lg text-[var(--fg-muted)] leading-relaxed">
+              I&apos;ve worked across the full stack — from crafting responsive UIs with React and Vue,
+              to building robust APIs with NestJS and Golang, deploying on AWS, Azure, and DigitalOcean.
             </p>
-            <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              Beyond development, I&apos;ve contributed to{" "}
-              <span className="text-gray-900 dark:text-white font-semibold">QA processes</span> — writing
-              end-to-end tests and helping validate APIs using tools like{" "}
-              <span className="text-indigo-600 dark:text-indigo-400 font-medium">Cypress</span>,{" "}
-              <span className="text-indigo-600 dark:text-indigo-400 font-medium">Playwright</span>, and{" "}
-              <span className="text-indigo-600 dark:text-indigo-400 font-medium">Jest</span>. I care about
-              shipping software that actually works, not just software that compiles.
+            <p className="text-lg text-[var(--fg-muted)] leading-relaxed">
+              Beyond development, I&apos;ve contributed to QA processes — writing end-to-end tests and
+              helping validate APIs using tools like Cypress, Playwright, and Jest. I care about shipping
+              software that actually works, not just software that compiles.
             </p>
 
-            <div className="flex flex-wrap gap-3 pt-2">
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-4 pt-4">
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white text-sm font-medium rounded-lg transition-all hover:shadow-lg hover:shadow-indigo-500/30 hover:-translate-y-0.5"
+                className="inline-flex items-center px-6 py-3 bg-[var(--accent)] text-[var(--accent-contrast)] text-sm font-medium transition-transform hover:-translate-y-0.5"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                Get in Touch
+                Get in touch
               </a>
               <a
                 href="https://linkedin.com/in/jaguilardev"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-indigo-500 dark:hover:border-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-400 text-sm font-medium rounded-lg transition-all hover:-translate-y-0.5"
+                className="group inline-flex items-center gap-1.5 text-sm font-medium hover:text-[var(--accent)] transition-colors"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                </svg>
                 LinkedIn
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
               </a>
             </div>
-          </div>
+          </Reveal>
 
-          {/* Stats */}
-          <div
-            className="grid grid-cols-2 gap-4 animate-fade-in-right"
-            style={{ animationDelay: "0.3s" }}
-          >
-            {stats.map((stat, i) => (
-              <div
-                key={stat.label}
-                className="relative group p-6 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 hover:border-indigo-300 dark:hover:border-indigo-700 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500/10"
-                style={{ animationDelay: `${0.3 + i * 0.1}s` }}
-              >
-                <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-indigo-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                <p className="text-4xl font-bold bg-linear-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 bg-clip-text text-transparent mb-1">
-                  {stat.value}
-                </p>
-                <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">{stat.label}</p>
-              </div>
-            ))}
-          </div>
+          <Reveal delay={0.15}>
+            <div className="border-t border-[var(--line)]">
+              {stats.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="flex items-baseline justify-between py-5 border-b border-[var(--line)]"
+                >
+                  <p className="text-sm text-[var(--fg-muted)]">{stat.label}</p>
+                  <p className="font-mono text-3xl font-bold">{stat.value}</p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>

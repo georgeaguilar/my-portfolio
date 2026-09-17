@@ -1,3 +1,5 @@
+import Reveal from "./Reveal";
+
 const projects = [
   {
     title: "Job Placement Platform",
@@ -53,91 +55,51 @@ const projects = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="relative py-20 sm:py-28 px-6 overflow-hidden">
-      {/* Background blob */}
-      <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-indigo-400/10 dark:bg-indigo-600/10 blur-3xl pointer-events-none" />
-
+    <section id="experience" className="py-24 sm:py-32 px-6">
       <div className="max-w-6xl mx-auto">
-        {/* Section title */}
-        <div className="mb-16 animate-fade-in-up">
-          <p className="text-sm font-mono text-indigo-600 dark:text-indigo-400 tracking-widest uppercase mb-2">
-            Where I&apos;ve worked
-          </p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white">
-            Experience
-          </h2>
-          <div className="mt-4 h-1 w-16 rounded-full bg-linear-to-r from-indigo-600 to-purple-600" />
-        </div>
+        <Reveal className="flex items-baseline gap-4 mb-16">
+          <span className="font-mono text-sm text-[var(--fg-muted)]">03</span>
+          <h2 className="text-title font-bold">Experience</h2>
+        </Reveal>
 
-        {/* Company header */}
-        <div
-          className="animate-fade-in-up flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-12 p-6 rounded-2xl bg-linear-to-r from-indigo-50 to-purple-50 dark:from-indigo-950/40 dark:to-purple-950/40 border border-indigo-100 dark:border-indigo-900"
-          style={{ animationDelay: "0.1s" }}
-        >
+        <Reveal delay={0.05} className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 pb-8 border-b border-[var(--line)] mb-2">
           <div>
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Code Éxitos</h3>
-            <p className="text-indigo-600 dark:text-indigo-400 font-medium">Software Developer</p>
+            <h3 className="text-xl font-bold">Code Éxitos</h3>
+            <p className="text-[var(--fg-muted)]">Software Developer</p>
           </div>
-          <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-            San Pedro Sula, Honduras
-            <span className="mx-2">·</span>
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-            2022 — 2025
-          </div>
-        </div>
+          <p className="font-mono text-sm text-[var(--fg-muted)]">
+            San Pedro Sula, Honduras · 2022 — 2025
+          </p>
+        </Reveal>
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-4 top-0 bottom-0 w-px bg-linear-to-b from-indigo-400 via-purple-400 to-pink-400 opacity-30 dark:opacity-20" />
-
-          <div className="space-y-8">
-            {projects.map((project, i) => (
-              <div
-                key={project.title}
-                className="animate-fade-in-up relative pl-12"
-                style={{ animationDelay: `${0.1 + i * 0.07}s` }}
-              >
-                {/* Timeline dot */}
-                <div className="absolute left-0 top-5 w-8 h-8 rounded-full bg-white dark:bg-gray-950 border-2 border-indigo-400 dark:border-indigo-600 flex items-center justify-center shadow-sm">
-                  <div className="w-2.5 h-2.5 rounded-full bg-indigo-500 dark:bg-indigo-400" />
+        <div>
+          {projects.map((project, i) => (
+            <Reveal
+              key={project.title}
+              delay={i * 0.04}
+              className="grid grid-cols-1 sm:grid-cols-[3rem_1fr] gap-2 sm:gap-8 py-8 border-b border-[var(--line)]"
+            >
+              <span className="font-mono text-sm text-[var(--fg-muted)]">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <div>
+                <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-2">
+                  <h4 className="text-lg font-semibold">{project.title}</h4>
+                  {project.highlight && (
+                    <span className="shrink-0 font-mono text-xs text-[var(--accent)]">
+                      {project.highlight}
+                    </span>
+                  )}
                 </div>
-
-                {/* Card */}
-                <div className="group p-6 rounded-2xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-md shadow-black/8 dark:shadow-none hover:border-indigo-200 dark:hover:border-indigo-800 transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-indigo-500/10">
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
-                    <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
-                      {project.title}
-                    </h4>
-                    {project.highlight && (
-                      <span className="shrink-0 inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-indigo-100 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800">
-                        🚀 {project.highlight}
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((t) => (
-                      <span
-                        key={t}
-                        className="px-2.5 py-1 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                <p className="text-[var(--fg-muted)] leading-relaxed mb-3">
+                  {project.description}
+                </p>
+                <p className="font-mono text-xs text-[var(--fg-muted)] uppercase tracking-wide">
+                  {project.tech.join(" · ")}
+                </p>
               </div>
-            ))}
-          </div>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>

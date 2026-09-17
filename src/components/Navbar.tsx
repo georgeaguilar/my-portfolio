@@ -3,24 +3,45 @@
 import { useEffect, useState } from "react";
 
 const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Experience", href: "#experience" },
-  { label: "Education", href: "#education" },
-  { label: "Contact", href: "#contact" },
+  { label: "about", href: "#about" },
+  { label: "skills", href: "#skills" },
+  { label: "experience", href: "#experience" },
+  { label: "education", href: "#education" },
+  { label: "contact", href: "#contact" },
 ];
 
 export default function Navbar() {
   const [isDark, setIsDark] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [active, setActive] = useState<string>("");
 
   useEffect(() => {
     setIsDark(document.documentElement.classList.contains("dark"));
 
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+
+    const sections = navLinks
+      .map((l) => document.querySelector(l.href))
+      .filter(Boolean) as Element[];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(`#${entry.target.id}`);
+          }
+        });
+      },
+      { rootMargin: "-40% 0px -50% 0px" }
+    );
+    sections.forEach((s) => observer.observe(s));
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      observer.disconnect();
+    };
   }, []);
 
   const toggleTheme = () => {
@@ -40,15 +61,12 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/90 dark:bg-gray-950/90 backdrop-blur-md shadow-sm"
-          : "bg-transparent"
+          ? "bg-[var(--bg)]/90 backdrop-blur-md border-b border-[var(--line)]"
+          : "border-b border-transparent"
       }`}
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a
-          href="#"
-          className="text-xl font-bold text-indigo-600 dark:text-indigo-400 tracking-tight"
-        >
+        <a href="#" className="font-mono text-sm font-bold tracking-tight">
           JA
         </a>
 
@@ -57,19 +75,28 @@ export default function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                className={`group relative text-sm font-medium py-1 transition-colors ${
+                  active === link.href
+                    ? "text-[var(--fg)]"
+                    : "text-[var(--fg-muted)] hover:text-[var(--fg)]"
+                }`}
               >
                 {link.label}
+                <span
+                  className={`absolute left-0 -bottom-0.5 h-px bg-[var(--accent)] transition-all duration-300 ${
+                    active === link.href ? "w-full" : "w-0 group-hover:w-full"
+                  }`}
+                />
               </a>
             </li>
           ))}
         </ul>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-1">
           <button
             onClick={toggleTheme}
             aria-label="Toggle theme"
-            className="w-9 h-9 flex items-center justify-center rounded-full text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            className="w-11 h-11 flex items-center justify-center text-[var(--fg-muted)] hover:text-[var(--fg)] transition-colors"
           >
             {isDark ? (
               <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -85,7 +112,8 @@ export default function Navbar() {
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
-            className="md:hidden w-9 h-9 flex items-center justify-center rounded-full text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            aria-expanded={menuOpen}
+            className="md:hidden w-11 h-11 flex items-center justify-center text-[var(--fg-muted)] hover:text-[var(--fg)] transition-colors"
           >
             {menuOpen ? (
               <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -101,14 +129,14 @@ export default function Navbar() {
       </nav>
 
       {menuOpen && (
-        <div className="md:hidden bg-white dark:bg-gray-950 border-t border-gray-100 dark:border-gray-800 px-6 py-4">
-          <ul className="flex flex-col gap-4">
+        <div className="md:hidden fixed inset-x-0 top-16 bottom-0 bg-[var(--bg)] px-6 py-4">
+          <ul className="flex flex-col">
             {navLinks.map((link) => (
-              <li key={link.href}>
+              <li key={link.href} className="border-b border-[var(--line)]">
                 <a
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                  className="flex items-center min-h-11 text-base font-medium text-[var(--fg-muted)] hover:text-[var(--fg)] transition-colors"
                 >
                   {link.label}
                 </a>
